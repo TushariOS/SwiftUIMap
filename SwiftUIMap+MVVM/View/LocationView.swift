@@ -17,7 +17,6 @@ struct LocationView: View {
         ZStack {
             mapLayer
             .edgesIgnoringSafeArea(.all)
-            
             VStack(spacing: 0) {
                 header
                     .padding()
@@ -54,7 +53,7 @@ extension LocationView {
                     .frame(maxWidth: .infinity)
                     .animation(.none, value: viewModel.mapLocation)
                     .background(Color.clear)
-                    .overlay {
+                    .overlay(alignment: .leading) {
                         Image(systemName: "arrow.down")
                             .font(.headline)
                             .foregroundColor(.primary)

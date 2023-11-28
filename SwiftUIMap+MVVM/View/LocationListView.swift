@@ -8,20 +8,22 @@
 import SwiftUI
 
 struct LocationListView: View {
+    
     @EnvironmentObject private var viewModel:  LocationViewModel
     
     var body: some View {
         List {
             ForEach(viewModel.locations) { location in
-                Button {
-                    viewModel.selectedLocation(location: location)
-                } label: {
-                    listRowView(location: location)
-
-                }
-
-                .padding(.vertical, 4)
-                .listRowBackground(Color.clear)
+                // Button {
+                //     viewModel.selectedLocation(location: location)
+                // } label: {
+                listRowView(location: location)
+                    .onTapGesture {
+                        viewModel.selectedLocation(location: location)
+                    }
+                //                }
+                    .padding(.vertical, 4)
+                    .listRowBackground(Color.clear)
             }
         }
         .listStyle(PlainListStyle())

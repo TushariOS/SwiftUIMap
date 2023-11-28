@@ -28,7 +28,6 @@ struct LocationDetailView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
             }
-            
         }
         .ignoresSafeArea()
         .background(.ultraThinMaterial)
